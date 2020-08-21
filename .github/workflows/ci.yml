@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Hugo
-        run: snap install hugo
+        run: sudo snap install hugo
       - name: Build site
         run: hugo
       - name: Deploy site
