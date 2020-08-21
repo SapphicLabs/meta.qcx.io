@@ -1,0 +1,9 @@
+baseURL: https://meta.qcx.io/
+languageCode: en-us
+title: qcx.io
+theme: paper
+
+deployment:
+  targets:
+    - name: S3
+      URL: s3://meta.qcx.io?region=eu-north-1
