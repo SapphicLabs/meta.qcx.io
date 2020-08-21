@@ -2,7 +2,8 @@ name: CI
 
 env:
   HUGO_ENV: production
-  GIT_SUBMODULE_STRATEGY: recursive
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
 
 on:
   push:
@@ -15,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        submodules: true
       - name: Install Hugo
         run: sudo snap install hugo
       - name: Build site
