@@ -1,0 +1,22 @@
+name: CI
+
+env:
+  HUGO_ENV: production
+  GIT_SUBMODULE_STRATEGY: recursive
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo
+        run: snap install hugo
+      - name: Build site
+        run: hugo
+      - name: Deploy site
+        run: hugo deploy
