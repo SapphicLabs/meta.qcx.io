@@ -1,0 +1,9 @@
+pages:
+  stage: deploy
+  image: docker.io/library/alpine:edge
+  script:
+    - apk install hugo
+    - hugo
+  artifacts:
+    paths:
+      - public
