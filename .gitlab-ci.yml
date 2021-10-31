@@ -2,7 +2,7 @@ pages:
   stage: deploy
   image: docker.io/library/alpine:edge
   script:
-    - apk install hugo
+    - apk add hugo
     - hugo
   artifacts:
     paths:
